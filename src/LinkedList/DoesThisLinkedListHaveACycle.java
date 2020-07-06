@@ -91,7 +91,7 @@ public class DoesThisLinkedListHaveACycle {
     /*  Complexity:
             Time complexity: O(N)
                     contradiction proof -> fastRunner cannot skip slowerRunner
-                    cost model: list access; 
+                    cost model: list access;
 
             space complexity: O(1)
                     Because there is no data structure that contains the full list
