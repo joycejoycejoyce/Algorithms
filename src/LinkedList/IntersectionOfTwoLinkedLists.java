@@ -72,8 +72,27 @@ public class IntersectionOfTwoLinkedLists {
 
         return null;
     }
+    /* Complexity: first list length m, second list length n
+        Time complexity: O(m+n)
+                        if there is no intersection, check all nodes in l1 and l2
+        Space complexity: O(m) or O(n)
+     */
 
     static ListNode twoPointersApproach(ListNode headA, ListNode headB){
+         /*
+                1 -> 2 ->
+                         3 -> 4 -> null
+                     5 ->
+            intersection length = l1Length - prevIntersection_length1 = 2
+                                = l2length - prevIntersection_length2 = 3 - 1 = 2
+            l1Length + prevIntersection_length2 == l2length+prevIntersection_length1
+        then the two pts can land on the same node. If we jump
+
+        over the first list (l1length - 1), then we jump (prevIntersection_length2+1), we will just land on the node (4) after the intersection node(3).
+        ummm...
+        so we have to jump l1length times. We can let the pt land on null!
+
+        */
         ListNode a = headA, b = headB;
         while (a != b){
             if (a == null){
@@ -91,6 +110,11 @@ public class IntersectionOfTwoLinkedLists {
         }
         return a;
     }
+
+    /*  Complexity:
+            Time complexity: O(m+n) if there is no intersection
+            Space complexity: O(1) no data structure stores anything.
+     */
 
 
     public static ListNode createList( int[] vals){

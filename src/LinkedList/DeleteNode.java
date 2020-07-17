@@ -21,6 +21,10 @@ public class DeleteNode {
         nodeToDelete.value = nextNode.value;
         nodeToDelete.next = nextNode.next;
     }
+    /*  Complexity:
+            Time complexity: O(1)
+            Space complexity:O(1)
+     */
 
     public static void main(String[] args) {
 
